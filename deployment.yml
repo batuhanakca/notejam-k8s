@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test1
+  name: test1
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: test1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: test1
+    spec:
+      containers:
+      - image: docker.io/batuhanakca/notejam-flask-docker:v1.1
+        imagePullPolicy: IfNotPresent
+        name: test1
+        ports:
+          - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 15
+          timeoutSeconds: 4
+          periodSeconds: 5
+          failureThreshold: 4
+      
+        readinessProbe: 
+          httpGet:
+            path: /readyz
+            port: 5000
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          periodSeconds: 10
+          failureThreshold: 5
