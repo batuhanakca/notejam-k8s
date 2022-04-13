@@ -6,7 +6,7 @@
    ```
 2. if you are using minikube;
    ```sh
-   kubectl apply -f deployments.yml
+   kubectl apply -f deployment.yml
    kubectl apply -f service.yml.minikube
    kubectl apply -f hpa.yml
    kubectl port-forward svc/test1 5000:5000
