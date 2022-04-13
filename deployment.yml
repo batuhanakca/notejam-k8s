@@ -21,7 +21,7 @@ spec:
         app: test1
     spec:
       containers:
-      - image: docker.io/batuhanakca/notejam-flask-docker:v1.1
+      - image: docker.io/batuhanakca/notejam-flask-docker:v1.2-amd64
         imagePullPolicy: IfNotPresent
         name: test1
         ports:
