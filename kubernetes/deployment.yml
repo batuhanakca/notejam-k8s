@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: test1
-  name: test1
+    app: notejam
+  name: notejam
 spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: test1
+      app: notejam
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: test1
+        app: notejam
     spec:
       containers:
       - image: docker.io/batuhanakca/notejam-flask-docker:v1.2-amd64
         imagePullPolicy: IfNotPresent
-        name: test1
+        name: notejam
         ports:
           - containerPort: 5000
         resources:
