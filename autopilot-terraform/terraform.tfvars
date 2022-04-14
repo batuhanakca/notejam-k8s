@@ -1,2 +1,2 @@
-project_id = "cybernetic-day-346914"
-region     = "europe-west1"
+project_id = "!!!YOUR PROJECT NAME COMES HERE!!!"
+region     = "!!!YOUR REGION COMES HERE!!!"
