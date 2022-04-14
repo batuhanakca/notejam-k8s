@@ -16,3 +16,8 @@
    localhost:5000
    ```
 4. If you will be using it on a Managed Cloud Environment, `use service.yml.LoadB` instead of `service.yml.minikube` and also you don't need to use port-forwarding in there.
+5. If you are using Managed Cloud Environment, run below command and notedown External IP :
+   ```
+   kubectl get svc
+   ```
+   Then connect to that IP address on your browser. (port 80)
