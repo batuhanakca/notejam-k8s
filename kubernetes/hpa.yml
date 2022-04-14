@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
- name: test1-hpa
+ name: notejam-hpa
 spec:
  scaleTargetRef:
    apiVersion: apps/v1
    kind: Deployment
-   name: test1
+   name: notejam
  minReplicas: 2
  maxReplicas: 10
  targetCPUUtilizationPercentage: 50
